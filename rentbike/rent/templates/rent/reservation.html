@@ -1,0 +1,19 @@
+{% extends 'rent/base.html' %}
+
+{% block content %}
+<body>
+
+
+<header>
+    podsumowanie rezerwacji:
+</header>
+<p>numer reservacji: <b>{{reservation_id}}</b></p>
+<p> na dzień {{data}} pomyślnie zarezerwowany <br>
+    rower typu <b>{{typ_roweru}}</b> <br>
+    z numerem ramy <b>{{numer_ramy}}</b> <br>
+    dla klienta: <b>{{client}}</b>. </p>
+
+
+
+
+{% endblock %}

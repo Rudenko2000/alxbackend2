@@ -1,0 +1,16 @@
+{% extends 'rent/base.html' %}
+
+{% block content %}
+<body>
+<h1> {{biketype.type}} </h1>
+<p>{{biketype.opis}}</p>
+
+<form method = "POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit", value="rezerwować">
+
+</form>
+
+
+{% endblock %}

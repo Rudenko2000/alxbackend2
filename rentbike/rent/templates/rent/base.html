@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent a bike</title>
+</head>
+<body>
+<p> <FONT SIZE="+2" COLOR="blue"> Wypożyczalnia rowerów </FONT>
+<br>
+    <a href="{% url 'home' %}" >Strona główna </a>
+</p>
+<p>
+{% block content %}
+<header>
+    <a>dostępne typy rowerów:</a>
+</header>
+</p>
+{% for i in Byketypes %}
+<li> <a href="{% url 'rower' i.id %}"> {{i.type}} </a>
+
+    </li>
+{% endfor %}
+
+{% endblock %}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+
+            <li> <FONT SIZE="+2" COLOR="green">
+                {{ message }} </FONT>
+                 </li>
+
+
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<hr >
+<p> A. Rudenko </p>
+</body>
+</html>
