@@ -1,3 +1,5 @@
+import random
+
 from django.db import models
 from datetime import date
 
@@ -7,6 +9,14 @@ from datetime import date
 class BikeType(models.Model):
     type=models.CharField(max_length=50)
     opis=models.TextField()
+    def get_wolny_rower(self,date):
+
+        bikes = Bike.objects.filter(type=self).exclude(reservation__date=date)
+        if (bikes):
+             bike = random.choice(bikes)
+        else:
+            bike=None
+        return bike
 
 class Bike(models.Model):
     type=models.ForeignKey(BikeType, on_delete=models.CASCADE)

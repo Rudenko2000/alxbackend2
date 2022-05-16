@@ -10,11 +10,11 @@ from django.urls import reverse
 
 # Create your views here.
 
-def index(request):
+def home(request):
     context = {
             'Byketypes': BikeType.objects.all()
         }
-    return render(request, "rent/base.html", context)
+    return render(request, "rent/home.html", context)
 
 def reservation(request, biketype_id):
     form=ReservationForm(request.POST)
@@ -22,27 +22,26 @@ def reservation(request, biketype_id):
         "biketype": get_object_or_404(BikeType, id=biketype_id),
         "form": ReservationForm(request.POST),
     }
-    if form.is_valid():
-        biketype=BikeType.objects.get(id=biketype_id).type
-        date = form.cleaned_data["date"]
-        client = form.cleaned_data["client"]
+    if request.method == "POST":
+        if form.is_valid():
+            biketype=BikeType.objects.get(id=biketype_id)
+            date = form.cleaned_data["date"]
+            client = form.cleaned_data["client"]
 
-        reservations=Reservation.objects.filter(date__exact=date)
-        lista_zajentych_id=[]
-        for i in reservations:
-            lista_zajentych_id.append(i.bike.pk)
-        bikes = Bike.objects.filter(type=biketype_id).exclude(pk__in=lista_zajentych_id)
-        if (bikes):
-            bike=bikes[0]
-            reservation = Reservation(bike=bike, date=date, client=client)
-            reservation.save()
-            print(reservation.id)
-            messages.add_message(request, messages.SUCCESS, 'rezerwacja pomyślnie zakończona')
-            return HttpResponseRedirect(reverse('reservation_page', args=(reservation.id,)))
-        else:
-            messages.add_message(request,messages.ERROR, 'brak dostępnych rowerów na ten dzień, wybierz inny typ lub inny dzień')
 
-    return render(request, 'rent/rower.html', context)
+            bike = biketype.get_wolny_rower(date)
+
+            if type(bike)==Bike:
+                reservation = Reservation(bike=bike, date=date, client=client)
+                reservation.save()
+
+                messages.add_message(request, messages.SUCCESS, 'rezerwacja pomyślnie zakończona')
+                return HttpResponseRedirect(reverse('reservation_page', args=(reservation.id,)))
+            else:
+                messages.add_message(request,messages.ERROR, 'brak dostępnych rowerów na ten dzień,'
+                                                             ' wybierz inny typ lub inny dzień')
+
+    return render(request, 'rent/biketype.html', context)
 
 def reservation_page(request, reservation_id):
     reservation=Reservation.objects.get(id=reservation_id)

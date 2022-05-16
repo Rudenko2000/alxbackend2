@@ -22,8 +22,8 @@ import rent.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',rent.views.index,name="home"),
-    path('rower/<int:biketype_id>',rent.views.reservation,name="rower"),
+    path('',rent.views.home,name="home"),
+    path('biketype/<int:biketype_id>',rent.views.reservation,name="biketype"),
     path('rent/<int:reservation_id>',rent.views.reservation_page,name="reservation_page")
 
 ]

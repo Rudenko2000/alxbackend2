@@ -11,15 +11,7 @@
 </p>
 <p>
 {% block content %}
-<header>
-    <a>dostępne typy rowerów:</a>
-</header>
-</p>
-{% for i in Byketypes %}
-<li> <a href="{% url 'rower' i.id %}"> {{i.type}} </a>
 
-    </li>
-{% endfor %}
 
 {% endblock %}
 {% if messages %}
@@ -34,7 +26,6 @@
         {% endfor %}
     </ul>
 {% endif %}
-
 <hr >
 <p> A. Rudenko </p>
 </body>
