@@ -26,6 +26,11 @@ class Reservation(models.Model):
     bike=models.ForeignKey(Bike,on_delete=models.CASCADE)
     date=models.DateField(default=date.today)
     client=models.CharField(max_length=30)
+
+
+    class Meta:
+        unique_together = [["bike","date"]]
+        verbose_name = "Reserwacja"
     def __str__(self):
         return f"bike {self.bike} pk: {self.bike.pk} {self.bike.numer_ramy}date {self.date}, client {self.client}"
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from buildingmanagment.models import Room, Reservation
+from buildingmanagement.models import Room, Reservation
 # Register your models here.
 
 admin.site.register(Room)
