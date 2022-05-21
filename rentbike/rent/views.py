@@ -1,11 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
-from django.template import Template, Context
+from django.http import HttpResponseRedirect
 from rent.models import Bike,BikeType,Reservation
 from rent.forms import ReservationForm
 from django.contrib import messages
 from django.urls import reverse
-
 
 
 # Create your views here.
@@ -27,14 +25,15 @@ def reservation(request, biketype_id):
             biketype=BikeType.objects.get(id=biketype_id)
             date = form.cleaned_data["date"]
             client = form.cleaned_data["client"]
-
-
             bike = biketype.get_wolny_rower(date)
 
             if type(bike)==Bike:
-                reservation = Reservation(bike=bike, date=date, client=client)
+                reservation = Reservation(
+                    bike=bike,
+                    date=date,
+                    client=client
+                )
                 reservation.save()
-
                 messages.add_message(request, messages.SUCCESS, 'rezerwacja pomyślnie zakończona')
                 return HttpResponseRedirect(reverse('reservation_page', args=(reservation.id,)))
             else:
