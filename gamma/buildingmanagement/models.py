@@ -85,3 +85,14 @@ class Projector(models.Model):
 
     def __str__(self):
         return f"{self.producer}, {self.serial_number}, {self.room}"
+
+class Accesscard(models.Model):
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+
+    )
+    room = models.ManyToManyField(Room)
+
+    def __str__(self):
+        return f"{self.owner} {self.id}"

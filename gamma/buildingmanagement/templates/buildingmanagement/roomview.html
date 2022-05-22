@@ -1,17 +1,23 @@
 {% extends "buildingmanagement/base.html" %}
 
 {% block content %}
-<body>
-<h1> {{room.name}} </h1>
 
-{{room.projector}}
+ <body>
+ <h1> {{room.name}} </h1>
+
+ {{room.projector}}
+ {% if room.accesscard.all %}
+
+ {{room.sccesscard.all}}
+
+ {% endif%}
 
 
 
- <a> {{reserved_days}} </a>
+  <a> {{reserved_days}} </a>
 
 
-</body>
+ </body>
 
 {% endblock %}
 

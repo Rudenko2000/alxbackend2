@@ -92,7 +92,6 @@ def reservations(request):
     return render(request, "buildingmanagement/reservation.html", {"reservations":Reservation.objects.all()})
 
 
-
 #@login_required  - do użycia dla function-based-views
 
 class ReservationListView(LoginRequiredMixin, ListView):
@@ -102,3 +101,4 @@ def roomview(request, room_id):
     room=get_object_or_404(Room, id=room_id)
     reserved_days=room.find_reserved_days(month=5)
     return render(request, "buildingmanagement/roomview.html", {"room": room,'reserved_days':reserved_days})
+
