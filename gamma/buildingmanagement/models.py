@@ -1,15 +1,23 @@
 from django.db import models
 from django.db import transaction
-from django.db.models import F
+from django.db.models import F, UniqueConstraint, CheckConstraint
+from django.contrib.auth.models import User
+
+from django.conf import settings
 
 # Create your models here.
 
 class Room(models.Model):
     name = models.CharField(max_length=100)
     people_count = models.PositiveSmallIntegerField(default=0)
+    max_people_count = models.PositiveSmallIntegerField(null=False)
 
     def __str__(self):
         return self.name
+
+    def find_reserved_days(self,month):
+        return Reservation.objects.filter(room=self).\
+            filter(date__month=month).values_list('date__day', flat=True)
 
     @transaction.atomic
     def move_people_to(self, other_room, count=1):
@@ -50,13 +58,30 @@ class Room(models.Model):
 class Reservation(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     date = models.DateField()
-    user = models.CharField(max_length=255)
+    # user = models.CharField(max_length=255)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
 
     class Meta:
-        unique_together = [["room","date"]]
+        unique_together = [
+            ["room","date","user"],
+            ["date", "user"]
+        ]
+        # constraints= [
+        #     CheckConstraint(check=..., name="people_count_maximum")
+        # ]
+
 
     def __str__(self):
-        return f"{self.room.name} / {self.date}"
+        return f"{self.user} / {self.room.name} / {self.date}"
 
 
+class Projector(models.Model):
+    producer=models.CharField(max_length=100)
+    serial_number=models.CharField(max_length=100)
+    room=models.OneToOneField(Room, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.producer}, {self.serial_number}, {self.room}"

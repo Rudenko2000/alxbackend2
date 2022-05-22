@@ -4,15 +4,35 @@
     <meta charset="UTF-8">
     <title>{%block Title%} Building management {%endblock%}</title>
 </head>
-
+<body>
+<a href="{% url 'home' %}">home</a>
+<p>
+<a href="{% url 'reservations' %}">lista rezerwacji</a>
+</p>
+<p>
+<a href="{% url 'reserve' %}">reserve</a>
+</p>
+<p>
 {% if user.is_authenticated %}
         {{ user }} | <a href="{% url 'logout' %}">logout</a>
     {% else %}
-        <a href="{% url 'login' %}">login</a>
+        <a href="{% url 'login' %}">login</a>  <a>/</a> <a href="{% url 'signup' %}">signup</a>
     {% endif %}
-<body>
+</p>
 {%block content%}
 
 {%endblock%}
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+
+            <li> <FONT SIZE="+2" COLOR="green">
+                {{ message }} </FONT>
+                 </li>
+
+
+        {% endfor %}
+    </ul>
+{% endif %}
 </body>
 </html>
