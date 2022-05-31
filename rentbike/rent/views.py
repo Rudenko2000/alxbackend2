@@ -53,7 +53,7 @@ def reservation_page(request, reservation_id):
         "reservation_id":reservation_id
 
     }
-    return render(request, 'rent/reservation.html', context)
+    return render(request, 'rent/reservation_list.html', context)
 
 
 

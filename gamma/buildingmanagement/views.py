@@ -7,19 +7,24 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
 from django.contrib import messages
+import datetime
+from django.contrib.auth.models import User
+from django.views.generic.base import TemplateView
 
 
 from .models import Reservation, Room
 from buildingmanagement.forms import ReservationForm
 
-# Create your views here.
-@login_required
+
 def home(request):
+    missingKey(request)
     context = {
         'Rooms': Room.objects.all()
     }
     return render(request,"buildingmanagement/home.html",context)
 
+class Home(TemplateView):
+    template_name = "buildingmanagement/home.html"
 
 def signup(request):
     if request.method == 'POST':
@@ -30,13 +35,18 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
+
             return redirect('home')
     else:
         form = UserCreationForm()
+
     return render(request, 'registration/signup.html', {'form': form})
 
+
+@login_required
 def reserve(request):
     form = ReservationForm(request.POST)
+    missingKey(request)
     if request.method == "POST":
 
         if form.is_valid():
@@ -60,7 +70,7 @@ def reserve(request):
                 return redirect(home)
     else:
           form = ReservationForm()
-    return render(request, "buildingmanagement/room.html", {'form': form})
+    return render(request, "buildingmanagement/roomReservation.html", {'form': form})
 
 # @login_required
 # def reserve(request):
@@ -82,23 +92,43 @@ def reserve(request):
 #                 return redirect("home")
 #     else:
 #         form = ReservationForm()
-#     return render(request, 'buildingmanagement/room.html', {'form': form})
-
-
+#     return render(request, 'buildingmanagement/roomReservation.html', {'form': form})
 
 
 def reservations(request):
 
-    return render(request, "buildingmanagement/reservation.html", {"reservations":Reservation.objects.all()})
 
+    return render(request, "buildingmanagement/reservation_list.html", {"reservations":Reservation.objects.all()})
 
-#@login_required  - do użycia dla function-based-views
 
 class ReservationListView(LoginRequiredMixin, ListView):
     model = Reservation
 
 def roomview(request, room_id):
     room=get_object_or_404(Room, id=room_id)
-    reserved_days=room.find_reserved_days(month=5)
-    return render(request, "buildingmanagement/roomview.html", {"room": room,'reserved_days':reserved_days})
+    reserved_days=room.get_reserved_days(month=5)
+    accesscards=room.get_accesscards()
+    return render(request, "buildingmanagement/roomview.html",
+                    {
+                       "room": room,
+                       'reserved_days':reserved_days,
+                       'days_in_month': range(1, 32),
+                        'accesscards':accesscards
+                    }
+                  )
+
+def missingKey(request):
+    date30 = datetime.date.today() + datetime.timedelta(days=30)
+    noKeysRooms = Room.objects.filter(reservation__user=request.user). \
+        filter(reservation__date__gte=datetime.date.today(),
+               reservation__date__lte=(datetime.date.today() + datetime.timedelta(days=30))). \
+        exclude(accesscards__owner=request.user).distinct()
+
+    if noKeysRooms:
+        for i in noKeysRooms:
+            messages.add_message(request, messages.ERROR, f'{request.user}, masz brak klucza dla sali: {i}')
+
+
+class RoomlistView(ListView):
+    model = Room
 

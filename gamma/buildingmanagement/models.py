@@ -11,11 +11,12 @@ class Room(models.Model):
     name = models.CharField(max_length=100)
     people_count = models.PositiveSmallIntegerField(default=0)
     max_people_count = models.PositiveSmallIntegerField(null=False)
-
+    def get_accesscards(self):
+        return Accesscard.objects.filter(room=self)
     def __str__(self):
         return self.name
 
-    def find_reserved_days(self,month):
+    def get_reserved_days(self,month):
         return Reservation.objects.filter(room=self).\
             filter(date__month=month).values_list('date__day', flat=True)
 
@@ -84,7 +85,7 @@ class Projector(models.Model):
     room=models.OneToOneField(Room, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.producer}, {self.serial_number}, {self.room}"
+        return f"{self.producer}, {self.serial_number}"
 
 class Accesscard(models.Model):
     owner = models.ForeignKey(
@@ -92,7 +93,8 @@ class Accesscard(models.Model):
         on_delete=models.CASCADE
 
     )
-    room = models.ManyToManyField(Room)
+    room = models.ManyToManyField(Room, related_name="accesscards")
 
     def __str__(self):
-        return f"{self.owner} {self.id}"
+        return f"{self.owner}'s card {self.id}"
+
