@@ -16,12 +16,12 @@ from .models import Reservation, Room
 from buildingmanagement.forms import ReservationForm
 
 
-def home(request):
-    missingKey(request)
-    context = {
-        'Rooms': Room.objects.all()
-    }
-    return render(request,"buildingmanagement/home.html",context)
+# def home(request):
+#     missingKey(request)
+#     context = {
+#         'Rooms': Room.objects.all()
+#     }
+#     return render(request,"buildingmanagement/home.html",context)
 
 class Home(TemplateView):
     template_name = "buildingmanagement/home.html"
@@ -42,11 +42,29 @@ def signup(request):
 
     return render(request, 'registration/signup.html', {'form': form})
 
+def missingkeychek(widok):
+    def wrapper(request):
+        date30 = datetime.date.today() + datetime.timedelta(days=30)
+        noKeysRooms = Room.objects.filter \
+                (
+                reservation__user=request.user,
+                reservation__date__gte=datetime.date.today(),
+                reservation__date__lte=date30
+                ).exclude(accesscards__owner=request.user).distinct()
+
+        if noKeysRooms:
+            for i in noKeysRooms:
+                messages.add_message(request, messages.ERROR, f'{request.user}, masz brak klucza dla sali: {i}')
+        wynik = widok(request)
+        return wynik
+    return wrapper
+
 
 @login_required
+@missingkeychek
 def reserve(request):
     form = ReservationForm(request.POST)
-    missingKey(request)
+    # missingKey(request)
     if request.method == "POST":
 
         if form.is_valid():
@@ -117,16 +135,22 @@ def roomview(request, room_id):
                     }
                   )
 
-def missingKey(request):
-    date30 = datetime.date.today() + datetime.timedelta(days=30)
-    noKeysRooms = Room.objects.filter(reservation__user=request.user). \
-        filter(reservation__date__gte=datetime.date.today(),
-               reservation__date__lte=(datetime.date.today() + datetime.timedelta(days=30))). \
-        exclude(accesscards__owner=request.user).distinct()
+# def missingKey(request):
+#     date30 = datetime.date.today() + datetime.timedelta(days=30)
+#     noKeysRooms = Room.objects.filter\
+#         (
+#         reservation__user=request.user,
+#         reservation__date__gte=datetime.date.today(),
+#         reservation__date__lte=date30
+#         ). \
+#         exclude(accesscards__owner=request.user).distinct()
+#
+#
+#     if noKeysRooms:
+#         for i in noKeysRooms:
+#             messages.add_message(request, messages.ERROR, f'{request.user}, masz brak klucza dla sali: {i}')
 
-    if noKeysRooms:
-        for i in noKeysRooms:
-            messages.add_message(request, messages.ERROR, f'{request.user}, masz brak klucza dla sali: {i}')
+
 
 
 class RoomlistView(ListView):
