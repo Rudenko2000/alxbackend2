@@ -1,0 +1,816 @@
+-   model: admin.logentry
+    pk: 1
+    fields:
+        action_time: 2022-05-21 09:37:31.444020+00:00
+        user: 1
+        content_type: 7
+        object_id: '1'
+        object_repr: '1'
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 2
+    fields:
+        action_time: 2022-05-21 09:37:44.382742+00:00
+        user: 1
+        content_type: 7
+        object_id: '2'
+        object_repr: sala2
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 3
+    fields:
+        action_time: 2022-05-21 09:37:53.223858+00:00
+        user: 1
+        content_type: 7
+        object_id: '1'
+        object_repr: sala1
+        action_flag: 2
+        change_message: '[{"changed": {"fields": ["Name"]}}]'
+-   model: admin.logentry
+    pk: 4
+    fields:
+        action_time: 2022-05-21 09:38:23.618285+00:00
+        user: 1
+        content_type: 8
+        object_id: '1'
+        object_repr: sala1 / 2022-05-21
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 5
+    fields:
+        action_time: 2022-05-21 09:39:47.766983+00:00
+        user: 1
+        content_type: 7
+        object_id: '3'
+        object_repr: sala3
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 6
+    fields:
+        action_time: 2022-05-21 09:40:15.525801+00:00
+        user: 1
+        content_type: 7
+        object_id: '3'
+        object_repr: sala3
+        action_flag: 2
+        change_message: '[]'
+-   model: admin.logentry
+    pk: 7
+    fields:
+        action_time: 2022-05-21 10:10:35.872733+00:00
+        user: 1
+        content_type: 7
+        object_id: '1'
+        object_repr: sala1
+        action_flag: 2
+        change_message: '[{"changed": {"fields": ["People count"]}}]'
+-   model: admin.logentry
+    pk: 8
+    fields:
+        action_time: 2022-05-22 07:52:57.275641+00:00
+        user: 1
+        content_type: 10
+        object_id: '1'
+        object_repr: sala1
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 9
+    fields:
+        action_time: 2022-05-22 07:53:10.754401+00:00
+        user: 1
+        content_type: 10
+        object_id: '2'
+        object_repr: sala2
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 10
+    fields:
+        action_time: 2022-05-22 09:15:18.010606+00:00
+        user: 1
+        content_type: 9
+        object_id: '9'
+        object_repr: Aleksander / sala2 / 2022-05-21
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 11
+    fields:
+        action_time: 2022-05-22 09:15:18.022399+00:00
+        user: 1
+        content_type: 9
+        object_id: '5'
+        object_repr: admin / sala1 / 2022-05-21
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 12
+    fields:
+        action_time: 2022-05-22 11:49:48.797603+00:00
+        user: 1
+        content_type: 9
+        object_id: '8'
+        object_repr: Aleksander / sala1 / 2022-05-21
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 13
+    fields:
+        action_time: 2022-05-22 11:49:48.809541+00:00
+        user: 1
+        content_type: 9
+        object_id: '7'
+        object_repr: Aleksander / sala2 / 2022-05-27
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 14
+    fields:
+        action_time: 2022-05-22 11:49:48.814499+00:00
+        user: 1
+        content_type: 9
+        object_id: '6'
+        object_repr: admin / sala1 / 2022-05-29
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 15
+    fields:
+        action_time: 2022-05-22 11:49:48.818356+00:00
+        user: 1
+        content_type: 9
+        object_id: '4'
+        object_repr: admin / sala2 / 2022-05-26
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 16
+    fields:
+        action_time: 2022-05-22 11:49:48.823258+00:00
+        user: 1
+        content_type: 9
+        object_id: '3'
+        object_repr: admin / sala2 / 2022-05-24
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 17
+    fields:
+        action_time: 2022-05-22 11:49:48.826989+00:00
+        user: 1
+        content_type: 9
+        object_id: '2'
+        object_repr: admin / sala2 / 2022-05-22
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 18
+    fields:
+        action_time: 2022-05-22 11:49:48.831125+00:00
+        user: 1
+        content_type: 9
+        object_id: '1'
+        object_repr: admin / sala2 / 2022-05-21
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 19
+    fields:
+        action_time: 2022-05-22 11:50:54.184991+00:00
+        user: 1
+        content_type: 9
+        object_id: '1'
+        object_repr: Aleksander / sala1 / 2022-05-22
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 20
+    fields:
+        action_time: 2022-05-22 11:51:23.650753+00:00
+        user: 1
+        content_type: 9
+        object_id: '2'
+        object_repr: admin / sala1 / 2022-05-22
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 21
+    fields:
+        action_time: 2022-05-22 13:31:06.529910+00:00
+        user: 1
+        content_type: 11
+        object_id: '1'
+        object_repr: Projector object (1)
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 22
+    fields:
+        action_time: 2022-05-22 14:01:37.117689+00:00
+        user: 1
+        content_type: 12
+        object_id: '1'
+        object_repr: Aleksander 1
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 23
+    fields:
+        action_time: 2022-05-22 14:01:48.552659+00:00
+        user: 1
+        content_type: 12
+        object_id: '2'
+        object_repr: admin 2
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 24
+    fields:
+        action_time: 2022-05-22 14:02:53.662676+00:00
+        user: 1
+        content_type: 12
+        object_id: '2'
+        object_repr: admin 2
+        action_flag: 2
+        change_message: '[]'
+-   model: admin.logentry
+    pk: 25
+    fields:
+        action_time: 2022-05-31 15:50:58.424570+00:00
+        user: 1
+        content_type: 12
+        object_id: '3'
+        object_repr: Aleksander's card 3
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 26
+    fields:
+        action_time: 2022-05-31 15:51:20.951446+00:00
+        user: 1
+        content_type: 12
+        object_id: '4'
+        object_repr: admin's card 4
+        action_flag: 1
+        change_message: '[{"added": {}}]'
+-   model: admin.logentry
+    pk: 27
+    fields:
+        action_time: 2022-05-31 15:51:44.016055+00:00
+        user: 1
+        content_type: 12
+        object_id: '2'
+        object_repr: admin's card 2
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 28
+    fields:
+        action_time: 2022-05-31 15:51:55.474382+00:00
+        user: 1
+        content_type: 12
+        object_id: '1'
+        object_repr: Aleksander's card 1
+        action_flag: 2
+        change_message: '[{"changed": {"fields": ["Room"]}}]'
+-   model: admin.logentry
+    pk: 29
+    fields:
+        action_time: 2022-05-31 15:51:59.489314+00:00
+        user: 1
+        content_type: 12
+        object_id: '1'
+        object_repr: Aleksander's card 1
+        action_flag: 2
+        change_message: '[]'
+-   model: admin.logentry
+    pk: 30
+    fields:
+        action_time: 2022-05-31 15:52:02.340894+00:00
+        user: 1
+        content_type: 12
+        object_id: '3'
+        object_repr: Aleksander's card 3
+        action_flag: 2
+        change_message: '[]'
+-   model: admin.logentry
+    pk: 31
+    fields:
+        action_time: 2022-05-31 15:52:06.321225+00:00
+        user: 1
+        content_type: 12
+        object_id: '4'
+        object_repr: admin's card 4
+        action_flag: 2
+        change_message: '[]'
+-   model: admin.logentry
+    pk: 32
+    fields:
+        action_time: 2022-05-31 16:49:08.633886+00:00
+        user: 1
+        content_type: 12
+        object_id: '4'
+        object_repr: admin's card 4
+        action_flag: 3
+        change_message: ''
+-   model: admin.logentry
+    pk: 33
+    fields:
+        action_time: 2022-05-31 16:57:26.296048+00:00
+        user: 1
+        content_type: 9
+        object_id: '2'
+        object_repr: admin / sala1 / 2022-07-19
+        action_flag: 2
+        change_message: '[{"changed": {"fields": ["Date"]}}]'
+-   model: admin.logentry
+    pk: 34
+    fields:
+        action_time: 2022-05-31 16:57:40.450183+00:00
+        user: 1
+        content_type: 9
+        object_id: '2'
+        object_repr: admin / sala1 / 2022-06-21
+        action_flag: 2
+        change_message: '[{"changed": {"fields": ["Date"]}}]'
+-   model: auth.permission
+    pk: 1
+    fields:
+        name: Can add log entry
+        content_type: 1
+        codename: add_logentry
+-   model: auth.permission
+    pk: 2
+    fields:
+        name: Can change log entry
+        content_type: 1
+        codename: change_logentry
+-   model: auth.permission
+    pk: 3
+    fields:
+        name: Can delete log entry
+        content_type: 1
+        codename: delete_logentry
+-   model: auth.permission
+    pk: 4
+    fields:
+        name: Can view log entry
+        content_type: 1
+        codename: view_logentry
+-   model: auth.permission
+    pk: 5
+    fields:
+        name: Can add permission
+        content_type: 2
+        codename: add_permission
+-   model: auth.permission
+    pk: 6
+    fields:
+        name: Can change permission
+        content_type: 2
+        codename: change_permission
+-   model: auth.permission
+    pk: 7
+    fields:
+        name: Can delete permission
+        content_type: 2
+        codename: delete_permission
+-   model: auth.permission
+    pk: 8
+    fields:
+        name: Can view permission
+        content_type: 2
+        codename: view_permission
+-   model: auth.permission
+    pk: 9
+    fields:
+        name: Can add group
+        content_type: 3
+        codename: add_group
+-   model: auth.permission
+    pk: 10
+    fields:
+        name: Can change group
+        content_type: 3
+        codename: change_group
+-   model: auth.permission
+    pk: 11
+    fields:
+        name: Can delete group
+        content_type: 3
+        codename: delete_group
+-   model: auth.permission
+    pk: 12
+    fields:
+        name: Can view group
+        content_type: 3
+        codename: view_group
+-   model: auth.permission
+    pk: 13
+    fields:
+        name: Can add user
+        content_type: 4
+        codename: add_user
+-   model: auth.permission
+    pk: 14
+    fields:
+        name: Can change user
+        content_type: 4
+        codename: change_user
+-   model: auth.permission
+    pk: 15
+    fields:
+        name: Can delete user
+        content_type: 4
+        codename: delete_user
+-   model: auth.permission
+    pk: 16
+    fields:
+        name: Can view user
+        content_type: 4
+        codename: view_user
+-   model: auth.permission
+    pk: 17
+    fields:
+        name: Can add content type
+        content_type: 5
+        codename: add_contenttype
+-   model: auth.permission
+    pk: 18
+    fields:
+        name: Can change content type
+        content_type: 5
+        codename: change_contenttype
+-   model: auth.permission
+    pk: 19
+    fields:
+        name: Can delete content type
+        content_type: 5
+        codename: delete_contenttype
+-   model: auth.permission
+    pk: 20
+    fields:
+        name: Can view content type
+        content_type: 5
+        codename: view_contenttype
+-   model: auth.permission
+    pk: 21
+    fields:
+        name: Can add session
+        content_type: 6
+        codename: add_session
+-   model: auth.permission
+    pk: 22
+    fields:
+        name: Can change session
+        content_type: 6
+        codename: change_session
+-   model: auth.permission
+    pk: 23
+    fields:
+        name: Can delete session
+        content_type: 6
+        codename: delete_session
+-   model: auth.permission
+    pk: 24
+    fields:
+        name: Can view session
+        content_type: 6
+        codename: view_session
+-   model: auth.permission
+    pk: 25
+    fields:
+        name: Can add room
+        content_type: 7
+        codename: add_room
+-   model: auth.permission
+    pk: 26
+    fields:
+        name: Can change room
+        content_type: 7
+        codename: change_room
+-   model: auth.permission
+    pk: 27
+    fields:
+        name: Can delete room
+        content_type: 7
+        codename: delete_room
+-   model: auth.permission
+    pk: 28
+    fields:
+        name: Can view room
+        content_type: 7
+        codename: view_room
+-   model: auth.permission
+    pk: 29
+    fields:
+        name: Can add reservation
+        content_type: 8
+        codename: add_reservation
+-   model: auth.permission
+    pk: 30
+    fields:
+        name: Can change reservation
+        content_type: 8
+        codename: change_reservation
+-   model: auth.permission
+    pk: 31
+    fields:
+        name: Can delete reservation
+        content_type: 8
+        codename: delete_reservation
+-   model: auth.permission
+    pk: 32
+    fields:
+        name: Can view reservation
+        content_type: 8
+        codename: view_reservation
+-   model: auth.permission
+    pk: 33
+    fields:
+        name: Can add reservation
+        content_type: 9
+        codename: add_reservation
+-   model: auth.permission
+    pk: 34
+    fields:
+        name: Can change reservation
+        content_type: 9
+        codename: change_reservation
+-   model: auth.permission
+    pk: 35
+    fields:
+        name: Can delete reservation
+        content_type: 9
+        codename: delete_reservation
+-   model: auth.permission
+    pk: 36
+    fields:
+        name: Can view reservation
+        content_type: 9
+        codename: view_reservation
+-   model: auth.permission
+    pk: 37
+    fields:
+        name: Can add room
+        content_type: 10
+        codename: add_room
+-   model: auth.permission
+    pk: 38
+    fields:
+        name: Can change room
+        content_type: 10
+        codename: change_room
+-   model: auth.permission
+    pk: 39
+    fields:
+        name: Can delete room
+        content_type: 10
+        codename: delete_room
+-   model: auth.permission
+    pk: 40
+    fields:
+        name: Can view room
+        content_type: 10
+        codename: view_room
+-   model: auth.permission
+    pk: 41
+    fields:
+        name: Can add projector
+        content_type: 11
+        codename: add_projector
+-   model: auth.permission
+    pk: 42
+    fields:
+        name: Can change projector
+        content_type: 11
+        codename: change_projector
+-   model: auth.permission
+    pk: 43
+    fields:
+        name: Can delete projector
+        content_type: 11
+        codename: delete_projector
+-   model: auth.permission
+    pk: 44
+    fields:
+        name: Can view projector
+        content_type: 11
+        codename: view_projector
+-   model: auth.permission
+    pk: 45
+    fields:
+        name: Can add accesscard
+        content_type: 12
+        codename: add_accesscard
+-   model: auth.permission
+    pk: 46
+    fields:
+        name: Can change accesscard
+        content_type: 12
+        codename: change_accesscard
+-   model: auth.permission
+    pk: 47
+    fields:
+        name: Can delete accesscard
+        content_type: 12
+        codename: delete_accesscard
+-   model: auth.permission
+    pk: 48
+    fields:
+        name: Can view accesscard
+        content_type: 12
+        codename: view_accesscard
+-   model: auth.user
+    pk: 1
+    fields:
+        password: pbkdf2_sha256$320000$rgDuulvQNA8wzzzxQzLiD1$/FQ1+ZrDHqqXh43bTgHI9DfStPqbkZedScMPsT8RPU4=
+        last_login: 2022-06-04 07:10:05.339358+00:00
+        is_superuser: true
+        username: admin
+        first_name: ''
+        last_name: ''
+        email: rudenko2000@gmail.com
+        is_staff: true
+        is_active: true
+        date_joined: 2022-05-21 09:32:58.442687+00:00
+        groups: []
+        user_permissions: []
+-   model: auth.user
+    pk: 2
+    fields:
+        password: pbkdf2_sha256$320000$h1pGUfKAJcCZpM3hYINvgr$JL0f4qavlC6udhnUMGYq5nX+GOI/K5teIJ8/WjgqbDM=
+        last_login: 2022-05-22 09:08:17.948724+00:00
+        is_superuser: false
+        username: Aleksander
+        first_name: ''
+        last_name: ''
+        email: ''
+        is_staff: false
+        is_active: true
+        date_joined: 2022-05-22 08:56:28.915824+00:00
+        groups: []
+        user_permissions: []
+-   model: contenttypes.contenttype
+    pk: 1
+    fields:
+        app_label: admin
+        model: logentry
+-   model: contenttypes.contenttype
+    pk: 2
+    fields:
+        app_label: auth
+        model: permission
+-   model: contenttypes.contenttype
+    pk: 3
+    fields:
+        app_label: auth
+        model: group
+-   model: contenttypes.contenttype
+    pk: 4
+    fields:
+        app_label: auth
+        model: user
+-   model: contenttypes.contenttype
+    pk: 5
+    fields:
+        app_label: contenttypes
+        model: contenttype
+-   model: contenttypes.contenttype
+    pk: 6
+    fields:
+        app_label: sessions
+        model: session
+-   model: contenttypes.contenttype
+    pk: 7
+    fields:
+        app_label: buildingmanagment
+        model: room
+-   model: contenttypes.contenttype
+    pk: 8
+    fields:
+        app_label: buildingmanagment
+        model: reservation
+-   model: contenttypes.contenttype
+    pk: 9
+    fields:
+        app_label: buildingmanagement
+        model: reservation
+-   model: contenttypes.contenttype
+    pk: 10
+    fields:
+        app_label: buildingmanagement
+        model: room
+-   model: contenttypes.contenttype
+    pk: 11
+    fields:
+        app_label: buildingmanagement
+        model: projector
+-   model: contenttypes.contenttype
+    pk: 12
+    fields:
+        app_label: buildingmanagement
+        model: accesscard
+-   model: sessions.session
+    pk: 3x2qx3j97gzp03jrho6qrdushn9vibk8
+    fields:
+        session_data: .eJxVjDsOwyAQRO9CHSE-Np-U6X0GtLtAcBKBZOwqyt1jSy6SbjTvzbxZgG0tYetpCXNkVybZ5bdDoGeqB4gPqPfGqdV1mZEfCj9p51OL6XU73b-DAr3sa2cGPVKyWYk9orHeInmIaSSFkcAhKS-0NyJqRS4bbdEKLwmkQT1k9vkC4XY33A:1nw9od:0MVvuBNxfiOZkOjD3cFruhWIIOPdteGtr4WGFDMA0vU
+        expire_date: 2022-06-14 21:54:15.915228+00:00
+-   model: sessions.session
+    pk: hagjtvkcxo5psv1nf49td39o1u3uw6vt
+    fields:
+        session_data: .eJxVjDsOwyAQRO9CHSE-Np-U6X0GtLtAcBKBZOwqyt1jSy6SbjTvzbxZgG0tYetpCXNkVybZ5bdDoGeqB4gPqPfGqdV1mZEfCj9p51OL6XU73b-DAr3sa2cGPVKyWYk9orHeInmIaSSFkcAhKS-0NyJqRS4bbdEKLwmkQT1k9vkC4XY33A:1nshZz:2W97YRnmvqT-9dUKHo8SCxTz9Z1p5_HMWbLTPQ-P8n4
+        expire_date: 2022-06-05 09:08:51.394719+00:00
+-   model: sessions.session
+    pk: r2cqm7l17ta3lmjug1aql5g6umpqb5lv
+    fields:
+        session_data: .eJxVjDsOwyAQRO9CHSE-Np-U6X0GtLtAcBKBZOwqyt1jSy6SbjTvzbxZgG0tYetpCXNkVybZ5bdDoGeqB4gPqPfGqdV1mZEfCj9p51OL6XU73b-DAr3sa2cGPVKyWYk9orHeInmIaSSFkcAhKS-0NyJqRS4bbdEKLwmkQT1k9vkC4XY33A:1nsLXt:5_uIYW4uuQ4HOpBMj3_1t-DYjbz4Z1eTQpqz9LwQoN8
+        expire_date: 2022-06-04 09:37:13.061314+00:00
+-   model: sessions.session
+    pk: su94omicvf9ndd0vviwwaqe0qajv6lb0
+    fields:
+        session_data: .eJxVjDsOwyAQRO9CHSE-Np-U6X0GtLtAcBKBZOwqyt1jSy6SbjTvzbxZgG0tYetpCXNkVybZ5bdDoGeqB4gPqPfGqdV1mZEfCj9p51OL6XU73b-DAr3sa2cGPVKyWYk9orHeInmIaSSFkcAhKS-0NyJqRS4bbdEKLwmkQT1k9vkC4XY33A:1nxNvB:r71HJ0wCgFLllrYBbXDE2jzjgq5DhrVxhPqqK4VJdD0
+        expire_date: 2022-06-18 07:10:05.344831+00:00
+-   model: buildingmanagement.room
+    pk: 1
+    fields:
+        name: sala1
+        people_count: 0
+        max_people_count: 30
+-   model: buildingmanagement.room
+    pk: 2
+    fields:
+        name: sala2
+        people_count: 0
+        max_people_count: 30
+-   model: buildingmanagement.reservation
+    pk: 1
+    fields:
+        room: 1
+        date: 2022-05-22
+        user: 2
+-   model: buildingmanagement.reservation
+    pk: 2
+    fields:
+        room: 1
+        date: 2022-06-21
+        user: 1
+-   model: buildingmanagement.reservation
+    pk: 3
+    fields:
+        room: 1
+        date: 2022-01-01
+        user: 2
+-   model: buildingmanagement.reservation
+    pk: 4
+    fields:
+        room: 1
+        date: 2022-05-04
+        user: 2
+-   model: buildingmanagement.reservation
+    pk: 5
+    fields:
+        room: 2
+        date: 2022-06-01
+        user: 2
+-   model: buildingmanagement.reservation
+    pk: 6
+    fields:
+        room: 1
+        date: 2022-05-29
+        user: 2
+-   model: buildingmanagement.reservation
+    pk: 7
+    fields:
+        room: 2
+        date: 2022-05-31
+        user: 1
+-   model: buildingmanagement.reservation
+    pk: 8
+    fields:
+        room: 1
+        date: 2022-06-04
+        user: 1
+-   model: buildingmanagement.projector
+    pk: 1
+    fields:
+        producer: dell
+        serial_number: 123s
+        room: 1
+-   model: buildingmanagement.accesscard
+    pk: 1
+    fields:
+        owner: 2
+        room:
+        - 2
+-   model: buildingmanagement.accesscard
+    pk: 3
+    fields:
+        owner: 2
+        room:
+        - 1

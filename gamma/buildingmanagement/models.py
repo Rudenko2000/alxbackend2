@@ -11,6 +11,9 @@ class Room(models.Model):
     name = models.CharField(max_length=100)
     people_count = models.PositiveSmallIntegerField(default=0)
     max_people_count = models.PositiveSmallIntegerField(null=False)
+    image = models.ImageField(upload_to="images/", null=True)
+
+
     def get_accesscards(self):
         return Accesscard.objects.filter(room=self)
     def __str__(self):
@@ -19,6 +22,8 @@ class Room(models.Model):
     def get_reserved_days(self,month):
         return Reservation.objects.filter(room=self).\
             filter(date__month=month).values_list('date__day', flat=True)
+
+
 
     @transaction.atomic
     def move_people_to(self, other_room, count=1):

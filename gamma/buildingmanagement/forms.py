@@ -10,3 +10,8 @@ class ReservationForm(forms.Form):
         initial=datetime.date.today,
         widget=forms.SelectDateWidget(empty_label="Nothing")
     )
+class RoomForm(forms.ModelForm):
+    class Meta:
+        model = Room
+        exclude =[]
+

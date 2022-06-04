@@ -8,4 +8,5 @@ urlpatterns = [
     path('roomview/<int:room_id>',views.roomview,name="roomview"),
     path('reservations',views.ReservationListView.as_view(),name="reservations"),
     path('roomlist',views.RoomlistView.as_view(), name="roomlist"),
+    path('roomview/add',views.AddRoom.as_view(), name="add_room"),
 ]

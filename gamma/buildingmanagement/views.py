@@ -10,18 +10,17 @@ from django.contrib import messages
 import datetime
 from django.contrib.auth.models import User
 from django.views.generic.base import TemplateView
-
-
 from .models import Reservation, Room
-from buildingmanagement.forms import ReservationForm
+from buildingmanagement.forms import ReservationForm, RoomForm
+from django.views import View
 
 
-# def home(request):
-#     missingKey(request)
-#     context = {
-#         'Rooms': Room.objects.all()
-#     }
-#     return render(request,"buildingmanagement/home.html",context)
+def home(request):
+
+    context = {
+        'Rooms': Room.objects.all()
+    }
+    return render(request,"buildingmanagement/home.html",context)
 
 class Home(TemplateView):
     template_name = "buildingmanagement/home.html"
@@ -71,7 +70,6 @@ def reserve(request):
             room =form.cleaned_data["room"]
             date = form.cleaned_data["date"]
             user = request.user
-
             reservation = Reservation(
                     room=room,
                     date=date,
@@ -118,7 +116,6 @@ def reservations(request):
 
     return render(request, "buildingmanagement/reservation_list.html", {"reservations":Reservation.objects.all()})
 
-
 class ReservationListView(LoginRequiredMixin, ListView):
     model = Reservation
 
@@ -155,4 +152,18 @@ def roomview(request, room_id):
 
 class RoomlistView(ListView):
     model = Room
+
+class AddRoom(View):
+    def get(self, request):
+        form =RoomForm()
+        return render (request, "buildingmanagement/add_room.html", {'form':form})
+    def post(self, request):
+        if request.method == 'POST':
+            form = RoomForm(request.POST,request.FILES)
+            if form.is_valid():
+                room = form.save()
+                return redirect('roomview',room.id)
+
+        return render(request, "buildingmanagement/add_room.html", {'form': form})
+
 
