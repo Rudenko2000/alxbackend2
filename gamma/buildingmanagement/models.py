@@ -103,3 +103,10 @@ class Accesscard(models.Model):
     def __str__(self):
         return f"{self.owner}'s card {self.id}"
 
+class UserProfile(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+
+
